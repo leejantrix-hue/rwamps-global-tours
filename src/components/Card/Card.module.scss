@@ -1,0 +1,33 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.card {
+background: $color-white;
+border-radius: $radius-xl;
+transition: transform $transition-base, box-shadow $transition-base;
+overflow: hidden;
+}
+
+// Variants
+.elevated {
+box-shadow: $shadow-md;
+}
+
+.flat {
+background: $bg-secondary;
+}
+
+.outlined {
+border: 1px solid $color-gray-200;
+}
+
+// Paddings
+.padding-none { padding: 0; }
+.padding-sm { padding: $space-4; }
+.padding-md { padding: $space-6; }
+.padding-lg { padding: $space-8; }
+
+.hoverable:hover {
+transform: translateY(-6px);
+box-shadow: $shadow-xl;
+}
