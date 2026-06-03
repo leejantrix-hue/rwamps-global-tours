@@ -1,0 +1,15 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.container {
+width: 100%;
+margin-left: auto;
+margin-right: auto;
+padding-left: $container-padding;
+padding-right: $container-padding;
+}
+
+.sm { max-width: 640px; }
+.md { max-width: 960px; }
+.lg { max-width: $container-max; }
+.full { max-width: 100%; }
