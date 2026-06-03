@@ -1,0 +1,29 @@
+@use '../../../../styles/variables' as *;
+@use '../../../../styles/mixins' as *;
+
+.hero {
+min-height: 100vh;
+display: flex;
+align-items: center;
+background:
+  linear-gradient(rgba(13, 27, 42, 0.6), rgba(13, 27, 42, 0.6)),
+  url('https://rwampsglobaltoursconsult.com/assets/header-DH26BS2v.png') center/cover no-repeat;
+padding-top: $space-24;
+padding-bottom: $space-16;
+color: $color-white;
+}
+
+.inner {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: $space-8;
+text-align: center;
+}
+
+.actions {
+display: flex;
+gap: $space-4;
+flex-wrap: wrap;
+justify-content: center;
+}
