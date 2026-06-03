@@ -1,0 +1,50 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.heading {
+display: flex;
+flex-direction: column;
+gap: $space-3;
+margin-bottom: $space-12;
+}
+
+.center {
+text-align: center;
+align-items: center;
+}
+
+.left {
+text-align: left;
+align-items: flex-start;
+}
+
+.eyebrow {
+font-family: $font-body;
+font-size: $font-size-sm;
+font-weight: $font-weight-semibold;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: $color-primary;
+}
+
+.title {
+@include heading-display;
+font-size: $font-size-3xl;
+color: $text-primary;
+max-width: 720px;
+
+@include md { font-size: $font-size-4xl; }
+}
+
+.subtitle {
+font-family: $font-body;
+font-size: $font-size-md;
+color: $text-secondary;
+line-height: $line-height-relaxed;
+max-width: 640px;
+}
+
+.inverse {
+.title { color: $text-inverse; }
+.subtitle { color: rgba(255, 255, 255, 0.85); }
+}
