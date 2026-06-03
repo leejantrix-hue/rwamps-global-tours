@@ -1,0 +1,86 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.button {
+@include button-base;
+border-radius: $radius-full;
+position: relative;
+overflow: hidden;
+
+&:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+}
+
+.icon {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+}
+
+// Sizes
+.sm {
+padding: $space-2 $space-4;
+font-size: $font-size-sm;
+gap: $space-1;
+}
+
+.md {
+padding: $space-3 $space-6;
+font-size: $font-size-base;
+gap: $space-2;
+}
+
+.lg {
+padding: $space-4 $space-8;
+font-size: $font-size-md;
+gap: $space-2;
+}
+
+// Variants
+.primary {
+background: $color-primary;
+color: $color-white;
+
+&:hover:not(:disabled) {
+  background: $color-primary-dark;
+  transform: translateY(-2px);
+  box-shadow: $shadow-md;
+}
+}
+
+.secondary {
+background: $color-secondary;
+color: $color-white;
+
+&:hover:not(:disabled) {
+  background: $color-secondary-dark;
+  transform: translateY(-2px);
+  box-shadow: $shadow-md;
+}
+}
+
+.ghost {
+background: transparent;
+color: $color-secondary;
+
+&:hover:not(:disabled) {
+  background: $color-gray-100;
+}
+}
+
+.outline {
+background: transparent;
+color: $color-secondary;
+border: 2px solid currentColor;
+
+&:hover:not(:disabled) {
+  background: $color-secondary;
+  color: $color-white;
+}
+}
+
+.fullWidth {
+width: 100%;
+}
