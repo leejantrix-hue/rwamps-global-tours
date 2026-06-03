@@ -1,0 +1,110 @@
+@use '../../../../styles/variables' as *;
+@use '../../../../styles/mixins' as *;
+
+.header {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+z-index: $z-fixed;
+padding: $space-4 0;
+transition: all $transition-base;
+background: transparent;
+}
+
+.scrolled {
+@include glass;
+box-shadow: $shadow-sm;
+padding: $space-3 0;
+}
+
+.inner {
+@include flex-between;
+gap: $space-6;
+}
+
+.logo {
+display: flex;
+align-items: center;
+img {
+  height: 44px;
+  width: auto;
+}
+}
+
+.nav {
+display: none;
+
+@include lg { display: block; }
+
+ul {
+  display: flex;
+  gap: $space-8;
+}
+
+a {
+  font-weight: $font-weight-medium;
+  color: $text-primary;
+  transition: color $transition-fast;
+  position: relative;
+
+  &:hover { color: $color-primary; }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: $color-primary;
+    transition: width $transition-base;
+  }
+  &:hover::after { width: 100%; }
+}
+}
+
+.actions {
+display: flex;
+align-items: center;
+gap: $space-4;
+}
+
+.callLink {
+display: none;
+align-items: center;
+gap: $space-2;
+font-size: $font-size-sm;
+font-weight: $font-weight-medium;
+color: $text-secondary;
+
+@include md { display: inline-flex; }
+
+&:hover { color: $color-primary; }
+}
+
+.menuToggle {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+color: $text-primary;
+padding: $space-2;
+
+@include lg { display: none; }
+}
+
+.open {
+display: block;
+position: absolute;
+top: 100%;
+left: 0;
+right: 0;
+background: $color-white;
+box-shadow: $shadow-lg;
+padding: $space-6 $container-padding;
+
+ul {
+  flex-direction: column;
+  gap: $space-4;
+}
+}
